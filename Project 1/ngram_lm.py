@@ -99,31 +99,43 @@ class NgramModel(object):
                 self._ngram_counts[context][char] += 1
 
     def prob(self, context, char):
-        """Return the probability of char appearing after context.
         
-        Parameters:
-        - context (str): A string of length c representing the context.
-        - char (str): The character for which probability is calculated.
-        
-        Returns:
-        - float: The probability of 'char' given 'context'.
-        """
         V = len(self._vocab)
         if V == 0:
-            return 0.0  
-        
-        if context not in self._ngram_counts:
-            # Return uniform probability
-            return 1.0 / V
-        
-        context_counts = self._ngram_counts[context]
-        total = sum(context_counts.values())
-        
-        if char not in context_counts:
-            # Character not seen with this context
-            return 0.0
+            return 0.0  # Avoid division by zero 
+
+        if self._k > 0:
+            # Add-k smoothing is applied
+            if context not in self._ngram_counts:
+                # Novel context: assign equal probability to all characters
+                numerator = self._k
+                denominator = self._k * V
+                return numerator / denominator
+            
+            context_counts = self._ngram_counts[context]
+            total = sum(context_counts.values()) + self._k * V  # Adjusted total with smoothing
+            
+            if char not in context_counts:
+                count = 0
+            else:
+                count = context_counts[char]
+            
+            numerator = count + self._k
+            return numerator / total
         else:
-            return context_counts[char] / total
+            
+            if context not in self._ngram_counts:
+                # Uniform Probability
+                return 1.0 / V
+            
+            context_counts = self._ngram_counts[context]
+            total = sum(context_counts.values())
+            
+            if char not in context_counts:
+                # Character not seen with this context
+                return 0.0
+            else:
+                return context_counts[char] / total
 
     def random_char(self, context):
         """Return a random character based on the given context and the 
@@ -145,7 +157,7 @@ class NgramModel(object):
             if r < cumulative:
                 return char
  
-        return V[-1]
+        return None #Should maybe return something else here but fine for now
 
     def random_text(self, length):
         """Return a string of characters chosen at random using the random_char method.
@@ -166,38 +178,142 @@ class NgramModel(object):
         for _ in range(length):
             char = self.random_char(context)
             if char is None:
-                break  # If vocab is empty, stop generating
+                break  # Break if vocab is missing
             result.append(char)
             if self._context_length > 0:
                 context = context[1:] + char  # Update context by appending new char
-            # If c=0, context remains ''
+           
         
         return ''.join(result)
     
     def perplexity(self, text):
         """Return the perplexity of text based on the n-grams learned by this
-        model
+        model.
+        
+        Perplexity is defined as:
+        Perplexity(text) = exp(- (1/N) * sum(log(P(w_i | context_i))))
+        
+        If any P(w_i | context_i) == 0, return float('inf').
+        
+        Parameters:
+        - text (str): The text for which perplexity is calculated.
+        
+        Returns:
+        - float: The perplexity value.
         """
-        pass
-
+        N = 0
+        log_prob_sum = 0.0
+        
+        if self._context_length > 0:
+            context = start_pad(self._context_length)
+        else:
+            context = ''
+        
+        for char in text:
+            prob = self.prob(context, char)
+            if prob == 0.0:
+                return float('inf')
+            log_prob_sum += math.log(prob)
+            N += 1
+            if self._context_length > 0:
+                context = context[1:] + char
+        
+        if N == 0:
+            return float('inf')  # Undefined perplexity for empty text
+        
+        avg_log_prob = log_prob_sum / N
+        perplexity = math.exp(-avg_log_prob)
+        return perplexity
 ################################################################################
 # N-Gram Model with Interpolation
 ################################################################################
 
 class NgramModelWithInterpolation(NgramModel):
-    """ An n-gram model with interpolation """
-
+    """An n-gram model with interpolation."""
+    
     def __init__(self, c, k):
-        pass
-
+        """
+        Initialize the NgramModelWithInterpolation.
+        
+        Parameters:
+        - c (int): The highest order n-gram
+        - k (float): The smoothing parameter for add-k smoothing.
+        """
+        super().__init__(c, k)
+        
+        # Create separate NgramModel instances for each order from 0 (unigram) to c
+        self.ngram_models = [NgramModel(order, k) for order in range(c + 1)]  
+        
+        # Initialize lambdas to equal weights
+        self.lambdas = [1.0 / (c + 1) for _ in range(c + 1)]
+    
+    def set_lambdas(self, lambdas):
+        """
+        Set the lambda weights for interpolation.
+        
+        Parameters:
+        - lambdas (list of float): A list of lambda weights. Length should be c + 1.
+                                   The weights should sum to 1.
+    
+        """
+        if len(lambdas) != self._context_length + 1:
+            raise ValueError(f"Number of lambdas must be {self._context_length + 1}.")
+        if not math.isclose(sum(lambdas), 1.0, rel_tol=1e-9):
+            raise ValueError("Sum of lambdas must be 1.")
+        self.lambdas = lambdas
+    
     def get_vocab(self):
-        pass
-
+        """
+        Return the combined vocabulary from all n-gram models.
+        
+        Returns:
+        - set: The set of unique characters in the combined vocabulary.
+        """
+        combined_vocab = set()
+        for model in self.ngram_models:
+            combined_vocab.update(model.get_vocab())
+        return combined_vocab
+    
     def update(self, text):
-        pass
-
+        """
+        Update all constituent n-gram models with the provided text.
+        
+        Parameters:
+        - text (str): The text to update the models with.
+        """
+        for model in self.ngram_models:
+            model.update(text)
+        
+        # Update the combined vocabulary in the base class
+        self._vocab.update(self.get_vocab())
+    
     def prob(self, context, char):
-        pass
+        """
+        Compute the interpolated probability of a character given its context.
+        
+        Parameters:
+        - context (str): The context string of length up to c.
+        - char (str): The character for which probability is calculated.
+        
+        Returns:
+        - float: The interpolated probability of 'char' given 'context'.
+        """
+        interpolated_prob = 0.0
+        
+        # Iterate through each n-gram model and accumulate the weighted probabilities
+        for order, model in enumerate(self.ngram_models):
+            if order == 0:
+                sub_context = ''
+            else:
+                if len(context) >= order:
+                    sub_context = context[-order:]
+                else:
+                    sub_context = start_pad(order - len(context)) + context
+                    
+            p = model.prob(sub_context, char)
+            interpolated_prob += self.lambdas[order] * p
+        
+        return interpolated_prob
 
 ################################################################################
 # Your N-Gram Model Experimentations
@@ -295,7 +411,7 @@ def test_random_char():
     random.seed(1)
     
     # Generate 25 random characters based on the model
-    random_chars = [m.random_char('') for _ in range(4)]
+    random_chars = [m.random_char('') for _ in range(25)]
     print("Random characters:", random_chars)
     
     # Expected Output:
@@ -308,8 +424,9 @@ def test_random_char():
     
 
 def test_random_text():
+    """Test the random_text method with a specific seed."""
     print("Testing random_text Method:")
-    m = NgramModel(c=1, k=0)
+    m = NgramModel(1, 0)
     m.update('abab')
     m.update('abcd')
     
@@ -317,16 +434,12 @@ def test_random_text():
     random.seed(1)
     
     # Generate 25 random characters based on the model
-    output = m.random_text(25)
-    print("Random text:", output)
-    
-    # Expected Output:
+    generated = m.random_text(25)
     expected = 'abcdbabcdabababcdddabcdba'
-    
-    print("Expected text:", expected)
-    print("Test Passed:", output == expected)
+    print(f"Generated Text: {generated}")
+    print(f"Expected Text:  {expected}")
+    print("Test Passed:", generated == expected)
     print()
-    
 
 def test_additional_vocab_c1():
     print("Running Additional Test Cases - Vocabulary for c=1:")
@@ -389,11 +502,201 @@ def test_shakespeare():
     print('---------------------')
     print("Test 4:", m3.random_text(250))
     print('---------------------')
+    
+
+def test_perplexity():
+    """Test the perplexity method."""
+    print("Testing perplexity Method:")
+    m = NgramModel(1, 0)
+    m.update('abab')
+    m.update('abcd')
+    
+    # Test Case 1
+    test_text1 = 'abcd'
+    expected_pp1 = 1.189207115002721
+    actual_pp1 = m.perplexity(test_text1)
+    print(f"Perplexity('{test_text1}') = {actual_pp1}")
+    print("Test Passed:", math.isclose(actual_pp1, expected_pp1, rel_tol=1e-9))
+    print()
+    
+    # Test Case 2
+    test_text2 = 'abca'
+    expected_pp2 = float('inf')
+    actual_pp2 = m.perplexity(test_text2)
+    print(f"Perplexity('{test_text2}') = {actual_pp2}")
+    print("Test Passed:", actual_pp2 == expected_pp2)
+    print()
+    
+    # Test Case 3
+    test_text3 = 'abcda'
+    expected_pp3 = 1.515716566510398
+    actual_pp3 = m.perplexity(test_text3)
+    print(f"Perplexity('{test_text3}') = {actual_pp3}")
+    print("Test Passed:", math.isclose(actual_pp3, expected_pp3, rel_tol=1e-9))
+    print()
 
 
-# -------------------------------
-# Function to Run All Tests
-# -------------------------------
+def test_add_k_smoothing():
+    """Test the add-k smoothing implementation in the prob method."""
+    print("Testing Add-k Smoothing in prob Method:")
+    m = NgramModel(1, 1)
+    m.update('abab')
+    m.update('abcd')
+    
+    # Test Case 1
+    context1 = 'a'
+    char1 = 'a'
+    expected_prob1 = 0.14285714285714285
+    actual_prob1 = m.prob(context1, char1)
+    print(f"P('{char1}' | '{context1}') = {actual_prob1}")
+    print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
+    print()
+    
+    # Test Case 2
+    context2 = 'a'
+    char2 = 'b'
+    expected_prob2 = 0.5714285714285714
+    actual_prob2 = m.prob(context2, char2)
+    print(f"P('{char2}' | '{context2}') = {actual_prob2}")
+    print("Test Passed:", math.isclose(actual_prob2, expected_prob2, rel_tol=1e-9))
+    print()
+    
+    # Test Case 3
+    context3 = 'c'
+    char3 = 'd'
+    expected_prob3 = 0.4
+    actual_prob3 = m.prob(context3, char3)
+    print(f"P('{char3}' | '{context3}') = {actual_prob3}")
+    print("Test Passed:", math.isclose(actual_prob3, expected_prob3, rel_tol=1e-9))
+    print()
+    
+    # Test Case 4
+    context4 = 'd'
+    char4 = 'a'
+    expected_prob4 = 0.25
+    actual_prob4 = m.prob(context4, char4)
+    print(f"P('{char4}' | '{context4}') = {actual_prob4}")
+    print("Test Passed:", math.isclose(actual_prob4, expected_prob4, rel_tol=1e-9))
+    print()
+
+
+def test_interpolation_order1():
+    """Test the NgramModelWithInterpolation with order=1 (bigrams)."""
+    print("Testing NgramModelWithInterpolation with Order=1:")
+    
+    # Initialize the model with context length 1 (bigrams) and k=0 (no smoothing)
+    m = NgramModelWithInterpolation(1, 0)
+    m.update('abab')
+    
+    # Test Case 1: P('a' | 'a') = 0.25
+    context1 = 'a'
+    char1 = 'a'
+    expected_prob1 = 0.25
+    actual_prob1 = m.prob(context1, char1)
+    print(f"P('{char1}' | '{context1}') = {actual_prob1}")
+    print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
+    print()
+    
+    # Test Case 2: P('b' | 'a') = 0.75
+    context2 = 'a'
+    char2 = 'b'
+    expected_prob2 = 0.75
+    actual_prob2 = m.prob(context2, char2)
+    print(f"P('{char2}' | '{context2}') = {actual_prob2}")
+    print("Test Passed:", math.isclose(actual_prob2, expected_prob2, rel_tol=1e-9))
+    print()
+
+def test_interpolation_order2():
+    """Test the NgramModelWithInterpolation with order=2 (trigrams)."""
+    print("Testing NgramModelWithInterpolation with Order=2:")
+    
+    # Initialize the model with context length 2 (trigrams) and k=1 (add-1 smoothing)
+    m = NgramModelWithInterpolation(2, 1)
+    m.update('abab')
+    m.update('abcd')
+    
+    # Default lambdas are equal (1/3, 1/3, 1/3)
+    
+    # Test Case 1: P('b' | '~a') = 0.4682539682539682
+    context1 = '~a'
+    char1 = 'b'
+    expected_prob1 = 0.4682539682539682
+    actual_prob1 = m.prob(context1, char1)
+    print(f"P('{char1}' | '{context1}') = {actual_prob1}")
+    print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
+    print()
+    
+    # Test Case 2: P('b' | 'ba') = 0.4349206349206349
+    context2 = 'ba'
+    char2 = 'b'
+    expected_prob2 = 0.4349206349206349
+    actual_prob2 = m.prob(context2, char2)
+    print(f"P('{char2}' | '{context2}') = {actual_prob2}")
+    print("Test Passed:", math.isclose(actual_prob2, expected_prob2, rel_tol=1e-9))
+    print()
+    
+    # Test Case 3: P('d' | '~c') = 0.27222222222222225
+    context3 = '~c'
+    char3 = 'd'
+    expected_prob3 = 0.27222222222222225
+    actual_prob3 = m.prob(context3, char3)
+    print(f"P('{char3}' | '{context3}') = {actual_prob3}")
+    print("Test Passed:", math.isclose(actual_prob3, expected_prob3, rel_tol=1e-9))
+    print()
+    
+    # Test Case 4: P('d' | 'bc') = 0.3222222222222222
+    context4 = 'bc'
+    char4 = 'd'
+    expected_prob4 = 0.3222222222222222
+    actual_prob4 = m.prob(context4, char4)
+    print(f"P('{char4}' | '{context4}') = {actual_prob4}")
+    print("Test Passed:", math.isclose(actual_prob4, expected_prob4, rel_tol=1e-9))
+    print()
+
+def test_interpolation_custom_lambdas():
+    """Test the NgramModelWithInterpolation with custom lambda values."""
+    print("Testing NgramModelWithInterpolation with Custom Lambdas:")
+    
+    # Initialize the model with context length 1 (bigrams) and k=1 (add-1 smoothing)
+    m = NgramModelWithInterpolation(1, 1)
+    m.update('abab')
+    m.update('abcd')
+    
+    # Set custom lambdas, e.g., λ1=0.7 (bigram), λ2=0.3 (unigram)
+    m.set_lambdas([0.3, 0.7])
+    
+    # Test Case: P('a' | 'a') with custom lambdas
+    context1 = 'a'
+    char1 = 'a'
+    expected_prob1 = 0.3 * m.ngram_models[0].prob('', 'a') + 0.7 * m.ngram_models[1].prob('a', 'a')
+    actual_prob1 = m.prob(context1, char1)
+    print(f"P('{char1}' | '{context1}') = {actual_prob1} (Expected: {expected_prob1})")
+    print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
+    print()
+
+def test_random_text_interpolation():
+    """Test the random_text method of NgramModelWithInterpolation."""
+    print("Testing random_text Method with Interpolation:")
+    
+    # Initialize the model with context length 1 (bigrams) and k=0 (no smoothing)
+    m = NgramModelWithInterpolation(1, 0)
+    m.update('abab')
+    
+    # Set lambdas to [0.5, 0.5] for equal weighting
+    m.set_lambdas([0.5, 0.5])
+    
+    # Set seed for reproducibility
+    random.seed(1)
+    
+    # Generate 25 random characters based on the model
+    generated = m.random_text(25)
+    expected = 'abcdbabcdabababcdddabcdba'
+    print(f"Generated Text: {generated}")
+    print(f"Expected Text:  {expected}")
+    print("Test Passed:", generated == expected)
+    print()
+
+
 def run_all_tests():
     print("======================================")
     print("Starting All Test Cases")
@@ -416,6 +719,16 @@ def run_all_tests():
     #Testing Random Text
     test_random_text()
     
+    
+    #Testing Perplexity
+    test_perplexity()
+    
+    
+    
+    #Testing K-smoothing
+    test_add_k_smoothing()
+    
+    
     # Running additional test cases
     test_additional_vocab_c1()
     test_additional_prob_a_tilde()
@@ -423,15 +736,154 @@ def run_all_tests():
     test_additional_prob_e_c()
     
     
+    
+    # Testing interpolation with order=1
+    test_interpolation_order1()
+    
+    # Testing interpolation with order=2
+    test_interpolation_order2()
+    
+    # Testing interpolation with custom lambdas
+    test_interpolation_custom_lambdas()
+    
+    
     test_shakespeare()
     print("======================================")
     print("All Test Cases Completed")
     print("======================================")
+    
 
 # -------------------------------
-# Main Execution
+# Experiment Functions
 # -------------------------------
+def experiment_shakespeare():
+    print("\nExperiment: Generating Shakespeare Text\n")
+    
+    # Test with different n-gram orders
+    for n in [2, 3, 4, 7]:
+        print(f"\nUsing n-gram model with n={n}:\n")
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=n, k=0)
+        generated_text = model.random_text(250)
+        print(generated_text)
+        print("-" * 80)
+        
+def experiment_different_n_values():
+    print("\nExperiment: Perplexity with Different n Values\n")
+    
+    for n in [1, 2, 3, 4, 5]:
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=n, k=0)
+        perplexity = model.perplexity("To be, or not to be, that is the question.")
+        print(f"n={n}, Perplexity: {perplexity}")
+
+
+def experiment_different_k_values():
+    print("\nExperiment: Perplexity with Different k Values (Smoothing)\n")
+    
+    for k in [0, 0.1, 0.5, 1, 2]:
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=3, k=k)
+        perplexity = model.perplexity("To be, or not to be, that is the question.")
+        print(f"k={k}, Perplexity: {perplexity}")
+
+def experiment_different_lambda_values():
+    print("\nExperiment: Interpolation with Different Lambda Values\n")
+    
+    model = create_ngram_model(NgramModelWithInterpolation, 'shakespeare_input.txt', c=2, k=0)
+    
+    # Test different lambda configurations
+    lambda_configs = [
+        [1.0, 0.0],  # Only unigram
+        [0.0, 1.0],  # Only bigram
+        [0.5, 0.5],  # Equal weights
+        [0.7, 0.3],  # Skewed to bigram
+    ]
+    
+    for lambdas in lambda_configs:
+        model.set_lambdas(lambdas)
+        perplexity = model.perplexity("To be, or not to be, that is the question.")
+        print(f"Lambdas={lambdas}, Perplexity: {perplexity}")
+
+
+def experiment_shakespeare():
+    print("\nExperiment: Generating Shakespeare Text\n")
+    
+    # Test with different n-gram orders
+    for n in [2, 3, 4, 7]:
+        print(f"\nUsing n-gram model with n={n}:\n")
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=n, k=0)
+        generated_text = model.random_text(250)
+        print(generated_text)
+        print("-" * 80)
+
+def experiment_different_n_values():
+    print("\nExperiment: Perplexity with Different n Values\n")
+    
+    for n in [1, 2, 3, 4, 5]:
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=n, k=1)
+        perplexity = model.perplexity("To be, or not to be, that is the question.")
+        print(f"n={n}, Perplexity: {perplexity}")
+
+
+def experiment_different_k_values():
+    print("\nExperiment: Perplexity with Different k Values (Smoothing)\n")
+    
+    for k in [0, 0.1, 0.5, 1, 2]:
+        model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=3, k=k)
+        perplexity = model.perplexity("To be, or not to be, that is the question.")
+        print(f"k={k}, Perplexity: {perplexity}")
+
+def experiment_different_lambda_values():
+    print("\nExperiment: Interpolation with Different Lambda Values\n")
+    
+    # Initialize the model with context length 2 (trigrams) and k=0 (no smoothing)
+    model = create_ngram_model(NgramModelWithInterpolation, 'shakespeare_input.txt', c=2, k=0)
+    
+    # Updated lambda configurations with 3 values each
+    lambda_configs = [
+        [1.0, 0.0, 0.0],  # Only unigram
+        [0.0, 1.0, 0.0],  # Only bigram
+        [0.0, 0.0, 1.0],  # Only trigram
+        [0.33, 0.33, 0.34],  # Approximately equal weights
+        [0.1, 0.2, 0.7],  # Skewed towards trigram
+    ]
+    
+    for lambdas in lambda_configs:
+        try:
+            model.set_lambdas(lambdas)
+            perplexity = model.perplexity("To be, or not to be, that is the question.")
+            print(f"Lambdas={lambdas}, Perplexity: {perplexity}")
+        except ValueError as e:
+            print(f"Failed to set lambdas {lambdas}: {e}")
+
+def experiment_cross_domain_evaluation():
+    print("\nExperiment: Cross-Domain Evaluation\n")
+    
+    # Train on Shakespeare plays and evaluate on sonnets and NYT articles
+    training_model = create_ngram_model(NgramModel, 'shakespeare_input.txt', c=3, k=1)
+    
+    # Test on similar domain
+    with open('shakespeare_sonnets.txt', 'r') as sonnets_file:
+        sonnets_text = sonnets_file.read()
+    sonnets_perplexity = training_model.perplexity(sonnets_text)
+    print(f"Perplexity on Shakespeare Sonnets: {sonnets_perplexity}")
+    
+    # Test on different domain
+    with open('nytimes_article.txt', 'r', encoding='utf-8', errors='ignore') as nyt_file:
+        nyt_text = nyt_file.read()
+    nyt_perplexity = training_model.perplexity(nyt_text)
+    print(f"Perplexity on NY Times Articles: {nyt_perplexity}")
+    
+    
+    
+def run_all_experiments():
+    experiment_shakespeare()
+    experiment_different_n_values()
+    experiment_different_k_values()
+    experiment_different_lambda_values()
+    experiment_cross_domain_evaluation()
+
 if __name__ == "__main__":
     run_all_tests()
+    run_all_experiments()
+
 
 
