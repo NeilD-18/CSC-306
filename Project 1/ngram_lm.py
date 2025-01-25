@@ -99,7 +99,15 @@ class NgramModel(object):
                 self._ngram_counts[context][char] += 1
 
     def prob(self, context, char):
+        """Return the probability of char appearing after context.
         
+        Parameters:
+        - context (str): A string of length c representing the context.
+        - char (str): The character for which probability is calculated.
+        
+        Returns:
+        - float: The probability of 'char' given 'context'.
+        """
         V = len(self._vocab)
         if V == 0:
             return 0.0  # Avoid division by zero 
@@ -511,7 +519,7 @@ def test_perplexity():
     m.update('abab')
     m.update('abcd')
     
-    # Test Case 1
+ 
     test_text1 = 'abcd'
     expected_pp1 = 1.189207115002721
     actual_pp1 = m.perplexity(test_text1)
@@ -519,7 +527,7 @@ def test_perplexity():
     print("Test Passed:", math.isclose(actual_pp1, expected_pp1, rel_tol=1e-9))
     print()
     
-    # Test Case 2
+  
     test_text2 = 'abca'
     expected_pp2 = float('inf')
     actual_pp2 = m.perplexity(test_text2)
@@ -527,7 +535,7 @@ def test_perplexity():
     print("Test Passed:", actual_pp2 == expected_pp2)
     print()
     
-    # Test Case 3
+    
     test_text3 = 'abcda'
     expected_pp3 = 1.515716566510398
     actual_pp3 = m.perplexity(test_text3)
@@ -543,7 +551,7 @@ def test_add_k_smoothing():
     m.update('abab')
     m.update('abcd')
     
-    # Test Case 1
+  
     context1 = 'a'
     char1 = 'a'
     expected_prob1 = 0.14285714285714285
@@ -552,7 +560,7 @@ def test_add_k_smoothing():
     print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
     print()
     
-    # Test Case 2
+ 
     context2 = 'a'
     char2 = 'b'
     expected_prob2 = 0.5714285714285714
@@ -561,7 +569,7 @@ def test_add_k_smoothing():
     print("Test Passed:", math.isclose(actual_prob2, expected_prob2, rel_tol=1e-9))
     print()
     
-    # Test Case 3
+    
     context3 = 'c'
     char3 = 'd'
     expected_prob3 = 0.4
@@ -570,7 +578,6 @@ def test_add_k_smoothing():
     print("Test Passed:", math.isclose(actual_prob3, expected_prob3, rel_tol=1e-9))
     print()
     
-    # Test Case 4
     context4 = 'd'
     char4 = 'a'
     expected_prob4 = 0.25
@@ -588,7 +595,7 @@ def test_interpolation_order1():
     m = NgramModelWithInterpolation(1, 0)
     m.update('abab')
     
-    # Test Case 1: P('a' | 'a') = 0.25
+ 
     context1 = 'a'
     char1 = 'a'
     expected_prob1 = 0.25
@@ -597,7 +604,7 @@ def test_interpolation_order1():
     print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
     print()
     
-    # Test Case 2: P('b' | 'a') = 0.75
+
     context2 = 'a'
     char2 = 'b'
     expected_prob2 = 0.75
@@ -615,9 +622,6 @@ def test_interpolation_order2():
     m.update('abab')
     m.update('abcd')
     
-    # Default lambdas are equal (1/3, 1/3, 1/3)
-    
-    # Test Case 1: P('b' | '~a') = 0.4682539682539682
     context1 = '~a'
     char1 = 'b'
     expected_prob1 = 0.4682539682539682
@@ -626,7 +630,7 @@ def test_interpolation_order2():
     print("Test Passed:", math.isclose(actual_prob1, expected_prob1, rel_tol=1e-9))
     print()
     
-    # Test Case 2: P('b' | 'ba') = 0.4349206349206349
+
     context2 = 'ba'
     char2 = 'b'
     expected_prob2 = 0.4349206349206349
@@ -634,8 +638,7 @@ def test_interpolation_order2():
     print(f"P('{char2}' | '{context2}') = {actual_prob2}")
     print("Test Passed:", math.isclose(actual_prob2, expected_prob2, rel_tol=1e-9))
     print()
-    
-    # Test Case 3: P('d' | '~c') = 0.27222222222222225
+
     context3 = '~c'
     char3 = 'd'
     expected_prob3 = 0.27222222222222225
@@ -644,7 +647,7 @@ def test_interpolation_order2():
     print("Test Passed:", math.isclose(actual_prob3, expected_prob3, rel_tol=1e-9))
     print()
     
-    # Test Case 4: P('d' | 'bc') = 0.3222222222222222
+
     context4 = 'bc'
     char4 = 'd'
     expected_prob4 = 0.3222222222222222
@@ -682,10 +685,9 @@ def test_random_text_interpolation():
     m = NgramModelWithInterpolation(1, 0)
     m.update('abab')
     
-    # Set lambdas to [0.5, 0.5] for equal weighting
+
     m.set_lambdas([0.5, 0.5])
     
-    # Set seed for reproducibility
     random.seed(1)
     
     # Generate 25 random characters based on the model
@@ -723,18 +725,15 @@ def run_all_tests():
     #Testing Perplexity
     test_perplexity()
     
-    
-    
+
     #Testing K-smoothing
     test_add_k_smoothing()
-    
     
     # Running additional test cases
     test_additional_vocab_c1()
     test_additional_prob_a_tilde()
     test_additional_prob_d_c()
     test_additional_prob_e_c()
-    
     
     
     # Testing interpolation with order=1

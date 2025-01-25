@@ -169,7 +169,7 @@ def plot_results(results, c_values, k_values):
     import seaborn as sns
     import pandas as pd
 
-    # Prepare data for the heatmap
+    # Prepare data for the heatmap (going to be useful for report)
     data = []
     for c in c_values:
         row = []
