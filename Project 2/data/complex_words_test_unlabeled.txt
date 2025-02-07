@@ -1,0 +1,201 @@
+WORD	LABEL	ANNOTATORS	SENTENCE	SENTENCE_INDEX
+shark	0	0	The International Union for Conservation of Nature Red List of Threatened Species considers 12 percent of grouper , 11 percent of tuna and billfish and 24 percent of shark and ray species to be threatened with extinction .	28
+parks	0	0	THREE RIVERS , Calif. -- Black bears are a cherished part of the community here , a woodsy gateway town that funnels tourists to Sequoia and Kings Canyon national parks , where the first question many visitors ask of rangers is `` Where can I see a bear ? ''	29
+bristled	0	0	Bach bristled when asked at a news conference about the possibility of any voting irregularities .	1
+lifelike	0	0	The software , called Hyperion , simulates the physics of light , which can make animated films more lifelike or give them an otherworldly look .	18
+burgeoning	0	0	Parents , perhaps mindful of their daughters ' futures , are helping to make STEM dolls a `` burgeoning category , '' said Jackie Breyer , editor-in-chief for gift guide Toy Insider .	18
+ex-service	0	0	Home Depot is one of a number of companies that have stepped up their efforts to recruit U.S. military veterans , helping ex-service members such as Miranda who have struggled to find work and to adjust to life back home .	22
+punishing	0	0	LOS GATOS , Calif. -- Three punishing years of drought have parched California streams , rivers and wetlands .	6
+Bourbon	0	0	Born in Rome on Jan. 5 , 1938 , Juan Carlos was the son of Don Juan of Bourbon and Battenberg , the heir to the throne of the Bourbon dynasty , which had been overthrown in 1931 .	18
+search	0	0	On this sun-blasted tract of sand 14 miles south of Baker , Calif. , molecular biologist and -LSB- entrepreneur -RSB- -LRB- https://www.newsela.com/?tag=entrepreneur -RRB- J. Craig Venter is field-testing a technology that he says will revolutionize the search for extraterrestrial life .	36
+potentially	0	0	There are many similar designs for sale on the Internet , but Grayson 's products , which he currently makes himself at his home , hide some unique and potentially lifesaving items .	29
+massive	0	0	A massive bloom of microscopic algae -- which produced a natural toxin called domoic acid that is harmful to wildlife and fish -- in the Pacific Ocean is threatening the crab industry during a time when many fishing outfits make their most money .	1
+progress	0	0	Rwanda has made stunning progress since what was one of the 20th century 's greatest crimes , when more than 800,000 Tutsis and moderate Hutus were slaughtered by Hutu extremists .	4
+wrecking	0	0	SEATTLE -- A tiny white sliver inside the heads of fish could hold evidence of a century 's worth of humans wrecking the environment : atomic bombs , overfishing , even climate change .	21
+amendment	0	0	The Oneidas asked Goodell and Snyder to `` visit our homelands , '' and sought an amendment to league bylaws to prohibit franchises from naming a team with any term that is a racial epithet .	16
+consultations	0	0	`` For the first time in history , states recommended by consensus that an international treaty be negotiated to address the urgent crisis of biodiversity loss on the high seas , '' says Daniela Diz , a marine policy expert at WWF -LRB- World Wildlife Fund -RRB- , who sat in on the consultations , `` It 's an important step forward . ''	53
+hiding	0	0	Not only does Venter say his invention will detect and decode DNA hiding in otherworldly soil or water samples -- proving once and for all that we are not alone in the universe -- it also will beam that information back to Earth and allow scientists to reconstruct living copies in a biosafety facility .	12
+beavers	0	0	With their industrial-strength buck teeth and flat tails , beavers and their dams offer a defense against drought .	9
+trend	0	0	MIAMI -- It was in early 2014 that federal officials and immigrant rights activists noticed a disturbing trend at the U.S. border with Mexico .	17
+rigors	0	0	Beginning in September , hump day is no longer an official day off , a traditional oasis in the middle of the week for primary school students to rest from the rigors of academic pursuit .	31
+shoppers	0	0	The dolls are part of a movement catering to shoppers ' interest in STEM -- encouraging children , particularly girls , to study fields related to science , technology , engineering and math .	9
+prying	0	0	But today this ancient social contract is giving way as the Chinese economy booms , prying apart families with job opportunities in distant cities or abroad .	15
+aspect	0	0	It is often talked about as the basis of human civilization , and it affects every aspect of our lives .	16
+corners	0	0	A small smile began at the corners of his mouth and very slowly spread .	6
+text	0	0	SAN JOSE , Calif. -- A popular and accomplished Los Altos High student received a parent 's text message at school last year , to come home to talk about her grades .	17
+tropics	0	0	`` These temperatures exceed what we are expecting anywhere else in the world in the tropics over the next century , '' says John Burt , a marine biologist at a branch of New York University in the Emirates , who led the reef tour in 2012 .	15
+hypothetical	0	0	What has long been a hypothetical question may soon become a real one : What would the national economy look like with a $ 15-an-hour minimum wage ?	5
+universal	0	0	The laws limit gun magazines to 15 rounds and require universal background checks , to be paid for by the gun purchaser , among other restrictions .	10
+sargassum	0	0	Clumps of the brownish seaweed known as sargassum have long washed up on Caribbean coastlines , but researchers say the algae blooms have exploded in extent and frequency in recent years .	7
+residence	0	0	Riel-Salvatore and his colleagues wrote that the cave was probably used at times as a permanent residence , and as a logistical base at other times .	16
+rodents	0	0	The rodents are known as ecosystem engineers .	1
+great-grandchildren	0	0	Despite gray hair , wrinkles and 17 great-grandchildren , Dugan has no intention of going gentle into that good night .	7
+whales	0	0	But unlike the other whales , the 25-foot-long young adult stuck near the surface -- and it did n't dive down to feast on the blooms of krill that attract humpbacks to the bay .	4
+awful	0	0	`` It does n't take very much to destroy confidence , but it takes an awful lot to build it back , '' says Ian Bright , senior economist at ING , a global bank based in Amsterdam .	15
+centerpiece	0	0	In the midst of the stirring `` Glory , '' the musical centerpiece of the Oscar-nominated movie `` Selma , '' Chicago rapper Common delivers a terse summation of how words , melody and a protest merged during the civil-rights movement .	12
+unfortunate	0	0	He told NAACP members attending the group 's 104th annual convention to peacefully confront `` the unfortunate stereotypes '' that sometimes lead to police suspicion and private misjudgment .	16
+firearms	0	0	Afghans have grown familiar with firearms over long decades of war , from the 1979 Soviet invasion and the resulting insurgency to the civil war and the rise of the Taliban in the 1990s .	5
+front	0	0	Marching alongside the protesters , Allen snapped portrait after portrait that offered a view from the front lines in the days after Gray 's death .	16
+negative	0	0	By 52 percent to 46 percent , people had an unfavorable impression of him , the first time since November 2011 the negative number was higher .	22
+shirts	0	0	SAN FRANCISCO -- A public elementary school decided in 2011 to require students to wear a uniform with the school 's motto , `` Tomorrow 's Leaders , '' emblazoned in small letters on the shirts around a gopher , the campus mascot .	35
+surge	0	0	But nonetheless , the 24-year-old civil engineer from Baghdad plans to fly to Turkey next week in order to join the surge of migrants and refugees making a bid for a better life in Europe .	21
+clearing	0	0	But Jupiter came swinging in , clearing the way for small worlds like Earth by destroying those older planets .	6
+Look	0	0	-LRB- `` Look ! '' -RRB-	2
+Philae	0	0	Philae separated from the Rosetta orbiter at 3:35 a.m. EST Wednesday , after a decade of being attached to the spacecraft .	0
+story	0	0	Tom Brady has been an NFL golden boy , with movie-star looks , a supermodel wife , four Super Bowl championship rings , and a regular-guy-makes-good back story -- he went from being a sixth-round draft pick to one of the greatest quarterbacks in league history .	27
+down-on-his-luck	0	0	The passage is , of course , the literary skeleton of what down-on-his-luck Samuel Clemens would transform into literary gold , a wildly improbable story originally called Jim Smiley and His Jumping Frog , '' which introduced much of the 19th-century world to Mark Twain .	12
+dark	0	0	On a sun-drenched Saturday afternoon in Silver Spring , Maryland , the dark , cavernous Fillmore theater is roaring with life .	12
+gridlock	0	0	WASHINGTON -- The American public is unusually pessimistic about the direction of the country and increasingly fed up with Washington gridlock , a sour mood reflected in the worst disapproval ratings for President Barack Obama since he took office nearly five years ago .	20
+cancellations	0	0	Unrest after Michael Brown 's death in Ferguson forced cancellations of practices .	9
+Hand	0	0	`` Dropped another prospect this AM due to his social media presence ... Actually glad I got to see the ` real ' person before we offered him , '' Hand tweeted .	30
+intuitively	0	0	That universal truth is something that children seem to understand almost intuitively at a young age , but the path through which they develop a sense of what 's fair and what is n't -- and how they act on injustices -- is something that has been a puzzle for social scientists .	11
+stalagmites	0	0	Experts even recreated stalactites and stalagmites from the original site , as well as the cool temperatures and thick smell of humidity .	5
+stable	0	0	Despite warnings that the demonstrations could cause serious damage to Hong Kong 's economy and reputation as a stable Asian financial hub , the city 's stock exchange seemed to take the day 's activities in stride , falling less than 2 percent .	18
+House	0	0	Fresh security breaches , and Pierson 's repeated stumbles during a combative House of Representatives hearing Tuesday , led to growing calls in Congress for her resignation and Obama quickly agreed .	12
+farming	0	0	A centuries-old farming technique called dry farming -- once the order of the day in California 's Central Valley -- is once again drawing the interest of some of the region 's farmers .	2
+biosphere	0	0	The high seas -- the vast roiling ocean that reaches beyond a coastal state 's 320-kilometer exclusive economic zone , or EEZ -- is Earth 's largest biosphere .	27
+throws	0	0	Dressed in a red uniform in a Lenexa , Kansas , martial arts studio , Helen Dugan puts an opponent 73 years her junior in a choke hold , then throws him to the mat .	30
+pediatricians	0	0	The recommendations are bound to prompt eye-rolling and LOLs from many teens but an influential pediatricians group says parents need to know that unrestricted media use can have serious consequences .	15
+academia	0	0	The Special Operations Command began soliciting ideas for the suit this year from industry , academia and government labs , and has held two conferences where potential bidders , including Dowling 's company , Revision Military , demonstrated their products .	15
+ceding	0	0	Losers retreat to wooden benches , ceding to the next challenger .	6
+doctorate	0	0	He received 34 scholarships worth $ 1.3 million -- enough to get his bachelor 's , his master 's , and his doctorate , plus cover his living expenses with some left over to invest .	22
+aviators	0	0	The main mission of the group is to help students follow the legacy of the Tuskegee Airmen , the country 's first black military aviators , Davis said .	24
+landscaped	0	0	The Cannery project will feature drought-tolerant landscaping along its bike paths , and most of the front yards will be landscaped with low-water plants in place of grass .	20
+contains	0	0	Those who want the label contend that consumers are entitled to know whether their food contains GMOs so that they can make informed decisions about their purchase .	15
+freedom	0	0	`` The movement is a rhythm to us , freedom is like religion to us , '' Common raps in `` Glory . ''	9
+CHEAR	0	0	Those income disparities are worrisome for several reasons , said Sarah Clark , an associate research scientist at the University of Michigan 's Child Health Evaluation and Research Unit -LRB- CHEAR -RRB- .	30
+tendency	0	0	Yawning in response to another yawn is n't an emotional reaction per se , but the tendency for yawns to be contagious has been `` clinically , psychologically , neurobiologically and behaviorally linked to our capacity for empathy , '' according to the Japanese researchers who conducted the study .	16
+speech	0	0	The awkward kickoff for a series of official meetings in Beijing followed Biden 's speech earlier Wednesday urging young Chinese citizens to challenge orthodoxy and the status quo .	14
+taking	0	0	The curriculums , taking hold as school budgets tighten and the numbers of farms in the United States decline , are rich in science and touted as stepping stones for college-bound students considering careers in everything from urban forestry to renewable natural resources and genetic engineering of crops , perhaps for giant agribusiness companies such as Monsanto , Dow , DuPont and Pioneer .	3
+delays	0	0	Others have cerebral palsy , Down syndrome , attention deficit disorder and developmental delays .	13
+brief	0	0	In a brief appearance before reporters in which he took no questions , Biden did not go into details on differences over China 's newly declared restricted flying zone .	2
+mall	0	0	Minutes after arriving by bus at an outlet mall in Cabazon , California , a dozen or so Chinese tourists hustled out to buy luggage that they planned to stuff with high-end clothes , shoes and bags .	8
+emerged	0	0	But among those who enjoy and teach the use of firearms , a different question has emerged : What 's the proper way to teach children about guns ?	16
+rescue	0	0	That led to a weeks-long rescue effort involving federal and state agencies , six nonprofits , several businesses and dozens of volunteers , who battled rough seas from Monterey to Santa Barbara to give the humpback a shot at survival .	5
+payments	0	0	An Associated Press analysis of households in the 10 biggest economies shows that families continue to spend cautiously and have pulled hundreds of billions of dollars out of stocks , cut borrowing for the first time in decades and poured money into savings and bonds that offer puny interest payments , often too low to keep up with inflation .	49
+forces	0	0	`` The Afghan Interior Ministry orders all police forces to confiscate toy guns , which can lead to physical and psychological damage to people , '' the order read .	8
+Advances	0	0	The findings , described in the journal Science Advances , reveals another complexity of the effects of climate change -- both the effects it has on animal populations and the way it affects human disease , in the context of socioeconomic disparities .	8
+worry	0	0	Do n't worry , parents .	2
+pulley-like	0	0	Each elevator operates using a pulley-like system that consists of a cab and counterweights connected by a cable .	5
+express	0	0	The 104-story 1 WTC -- which opened for tenants in November -- has 73 elevators , five of which will be express elevators with a top speed of more than 36.5 kilometers per hour -LRB- 22.6 miles per hour -RRB- .	21
+hunt	0	0	Why the hunt ?	2
+buddies	0	0	They 're with their buddies .	4
+cable	0	0	Each elevator operates using a pulley-like system that consists of a cab and counterweights connected by a cable .	17
+suspicions	0	0	Once in the United States , he reveled in the ability to walk down a street without raising the suspicions of gunmen , his oud , a lute-like Middle Eastern instrument , slung across his back .	19
+trays	0	0	Here and there , some whole servings of apple slices got dumped , but otherwise empty trays and empty milk cartons filled the bins .	16
+struggling	0	0	The Girl Scouts also are struggling in terms of financial support .	5
+owls	0	0	It turned out there were 10 owls in Bagu 's dark , warm attic .	6
+Peace	0	0	Peace !	0
+subway	0	0	And even jaded New Yorkers were both disgusted and a little impressed by `` Pizza Rat , '' the plucky rodent in a recent viral YouTube clip seen dragging a large cheese slice down a subway stairwell .	35
+facilities	0	0	Egyptian television showed chaotic scenes of bloodied , unconscious protesters lying in makeshift triage facilities .	14
+limited	0	0	## A Limited Ruling But the issue of gay marriage causes passionate arguments on both sides , as evidenced by the fact that more than two-thirds of the states do not allow gay marriage .	2
+association	0	0	Schmidt is the current national president of the nutrition association .	9
+prompted	0	0	Many fear the day when Wyoming 's oil market fails , as it last did in the mid-1980s , exposing a fundamental flaw in the state 's job picture : The lure of the oil dollar has prompted teenagers to skip college , or abandon high school , for the petroleum fields -- many without a Plan B if things go bust .	37
+forced	0	0	The downpour forced him to cancel a meeting at his favorite coffee shop because his van had broken down the day before .	2
+reporting	0	0	Displayed on a tablet , the app shows a map of northeastern China covered with large orange circles , each representing one of the country 's major polluters , reporting its emissions in real time .	29
+outrage	0	0	In the months after the outrage stirred by the deaths of Brown and another unarmed African-American , Eric Garner , in New York , singer D'Angelo released his first album in more than a decade , `` Black Messiah , '' which included references both glancing and startlingly direct to the chain of events between Selma and Ferguson .	5
+full	0	0	Taking on the challenge , a team of software and biomedical engineers , neuroscientists , surgeons and prosthetists has designed a prosthetic limb that can reproduce a full repertoire of ambulatory tricks by communicating seamlessly with Vawter 's brain .	27
+convictions	0	0	ROCK HILL , S.C. -- The convictions of nine South Carolina black men who integrated a whites-only lunch counter during the height of the civil rights movement were tossed out Wednesday during an emotional hearing before a packed courtroom .	6
+grew	0	0	Castañeda , who grew up in Delano , California , thought students in rural communities should have access to the same opportunities as those in more affluent areas .	3
+laughter	0	0	Yet only in recent years has the significance of Twain 's time in the Mother Lode come into sharper relief , in particular the transformative role the friendships he developed here played in his decision to abandon youthful dreams of a career piloting paddleboats down the mighty Mississippi River and instead `` excite the laughter of God 's creatures . ''	54
+pressure	0	0	WASHINGTON -- Under pressure from Congress and international allies , President Barack Obama announced a change in what has been a central piece of his counterterrorism strategy , saying he would place new restrictions on the targeting of terrorists with missiles fired from -LSB- drones -RSB- -LRB- https://www.newsela.com/?tag=drone -RRB- .	3
+put	0	0	Then Time magazine put one on the cover .	3
+developmental	0	0	Others have cerebral palsy , Down syndrome , attention deficit disorder and developmental delays .	12
+adds	0	0	The expanding range of Naegleria infections could potentially be related to climate change , she adds , as the organism thrives in warmer temperatures .	15
+natural	0	0	For more than a decade , increasing numbers of black women have been wearing their natural hair in Afros , braids , locks and twists .	15
+angry	0	0	Parents like Eric and Isabelle Nizard are angry over a sinister social experiment being conducted on their 9-year-old son , Sacha .	7
+Harmful	0	0	Harmful fishing practices add to the threat .	0
+imprint	0	0	The president 's address to lawmakers and a prime-time television audience was meant to both shape his legacy and put his imprint squarely on the race to succeed him .	21
+world	0	0	Proponents of the requirement argued that American children were falling behind in financial literacy and that the increasingly complex world of consumer banking demanded a new kind of education .	19
+receiving	0	0	Three weeks after receiving a kidney transplant from his brother , a former Ravens ' player , Chris Kemoeatu has heard all of the wisecracks .	3
+Apple	0	0	Apple told her the charges were valid purchases from the game DragonVale .	0
+warnings	0	0	Despite warnings that the demonstrations could cause serious damage to Hong Kong 's economy and reputation as a stable Asian financial hub , the city 's stock exchange seemed to take the day 's activities in stride , falling less than 2 percent .	1
+pedestrians	0	0	The federal Fatality Analysis Reporting system attributes about a half-dozen pedestrians deaths a year to `` portable electronic devices , '' including phones and music players .	10
+hearing	0	0	Goodell kept the suspension intact after hearing Brady 's appeal , and revealed Tuesday the league had learned that Brady had directed that his cellphone be destroyed shortly before meeting with the NFL 's investigators in March .	6
+check	0	0	`` You can check out a laptop , and the next 30 minutes it 's dead .	3
+tallying	0	0	And he took a sophomore-level course by MIT professor Anant Agarwal called `` Circuits and Electronics , '' tallying 91 percent .	18
+critically	0	0	Eleven of the injured were believed to be critically injured and another six seriously hurt , according to the Fire Department .	8
+dangles	0	0	The neatly woven bracelets or keychain dangles are made from tough nylon cord .	6
+concrete	0	0	The matches on this concrete court are quick .	4
+Ruling	0	0	## A Limited Ruling But the issue of gay marriage causes passionate arguments on both sides , as evidenced by the fact that more than two-thirds of the states do not allow gay marriage .	3
+notebook	0	0	ANGELS CAMP , Calif. -- In the humble-looking notebook of a luckless prospector staying in a cabin on Jackass Hill near here in California 's Gold Country a century and a half ago , there 's an entry barely longer than a tweet .	8
+advocates	0	0	The coalition fighting against labeling has also included large grocery chains and some farmers , and some of the labeling advocates are sizable companies in their own right .	20
+trespassing	0	0	Fifty-four years ago , the eight college students and one civil rights organizer were convicted of trespassing and protesting at McCrory variety store in Rock Hill .	16
+crops	0	0	The curriculums , taking hold as school budgets tighten and the numbers of farms in the United States decline , are rich in science and touted as stepping stones for college-bound students considering careers in everything from urban forestry to renewable natural resources and genetic engineering of crops , perhaps for giant agribusiness companies such as Monsanto , Dow , DuPont and Pioneer .	47
+regularly	0	0	There are regularly more than 100 high school students in the Cutler-Orosi Joint Unified School District who apply for 30 slots in his yearlong Tech Connect class .	2
+Sitting	0	0	BEIJING -- Sitting at a desk in his small office here , Ma Jun , one of China 's best-known environmental advocates , shows off his latest tool in the fight against the nation 's crippling air pollution : a computer app .	2
+alarmed	0	0	The image alarmed Dean-Burren , who was an English teacher for 11 years at the Pearland , Texas , public high school that her son attends .	2
+rekindle	0	0	WASHINGTON -- Eyeing the end of his presidency , Barack Obama urged Americans Tuesday night to rekindle their belief in the promise of change that first carried him to the White House , declaring that the country must not allow election-year fear and division to put economic and security progress at risk .	16
+petroleum	0	0	But she pledged to create `` a grand pact '' to improve public services and said among her priorities would be to devote 100 percent of petroleum revenue to education , send thousands of doctors to rural areas , come up with a national urban transit plan , and meet with peaceful protest leaders .	26
+material	0	0	As the gap between the world 's top 1 percent and the rest has increased to historic highs in recent years , fairness in material payoffs or inequality has become one of the most important issues of our time .	24
+alone	0	0	The student , who did n't want to be identified because of the stigma of mental illness , is not alone .	20
+sister-in-law	0	0	One day , her sister-in-law saw one of them outside their third-floor window and screamed .	4
+pants	0	0	Women are bound by strict rules when it comes to their attire , so they can not be seen by men while jogging in sweat pants , much less wearing fitted or revealing shorts .	25
+wink	0	0	It will also be a wink to his craft , the one he uses to capture this city , his `` beautiful ghetto , '' in powerful black-and-white photos that have made him a surprise media sensation .	5
+squadron	0	0	Nowhere was this more painfully obvious than in Japan four years ago , after a small squadron of robots was sent to assist workers at the devastated Fukushima Daiichi nuclear plant .	16
+lowest	0	0	The monitoring site , more than 5,000 feet above sea level on a pine-studded overlook above the lowest layer of the atmosphere , gives Faloona access to undisturbed air from across the Pacific before it is fouled by U.S. pollution sources .	17
+street	0	0	WASHINGTON -- They walk in front of cars , and into tree limbs and street signs .	14
+condemning	0	0	`` We stand together in condemning Mr. Sterling 's views , '' Silver said .	5
+photo	0	0	Her son , Coby , had sent her a photo of a colorful page in his ninth-grade McGraw-Hill World Geography textbook .	9
+served	0	0	The men 's refusal to pay bail money into the segregationist town 's city coffers served as a catalyst for other civil disobedience .	15
+teacher	0	0	Kajencki , who 's 41 and is known to his students as `` Capt. K , '' said one reason he chose to become a high school math teacher was a commitment he made after West Point to a lifetime of service .	28
+prevalent	0	0	Across town at the Limba Restaurant , the menu carries an assortment of dishes from Thailand , created by a chef who spent a decade in kitchens in San Francisco , where Asian food is prevalent .	35
+engaging	0	0	After firing 87 volleys of tear gas at protesters at nine locations on Sunday evening , police backed away from engaging as directly with the demonstrators during the daytime on Monday .	20
+turf	0	0	The capital 's turf tradition is deeply rooted and is even enshrined in the bylaws of various homeowners associations .	3
+Academy	0	0	`` Glory '' won best original song at the Academy Awards on Sunday .	9
+baggage	0	0	The space squeeze -- as airlines pack more people and profit into planes -- is only the latest frustration for travelers , already weary of security hassles and charges for checked baggage , food , in-flight entertainment and other once-free services .	31
+draw	0	0	Emanuel 's decision to draw attention to a single issue is less conventional .	4
+plentiful	0	0	Good-paying blue-collar jobs in the petroleum and natural gas fields are as plentiful as pickups here , and the unemployment rate -- 4.6 percent in July -- remains far below the 7.4 percent national average .	12
+expressive	0	0	This was imposed upon us , '' said Isabelle Nizard , 41 , a dark-haired woman full of indignation and expressive gestures .	20
+appointee	0	0	The `` policy compels speech because it mandates the written motto , ` Tomorrow 's Leaders , ' on the uniform shirts , '' wrote Judge Jacqueline H. Nguyen , an Obama appointee , who was joined by two judges selected by Republican presidents .	32
+homelands	0	0	WASHINGTON -- Florida immigration courts , swamped by a growing stream of unaccompanied children who illegally crossed the Southwestern border , are creating `` rocket dockets '' to quickly decide whether they should be sent back to their turbulent homelands .	39
+territories	0	0	They 're arguing that as sea ice continues to melt in the Arctic , passageways are opening for certain animals - heretofore restricted by the ice - to start moving through , enabling them to cross into new territories .	38
+read	0	0	`` The Afghan Interior Ministry orders all police forces to confiscate toy guns , which can lead to physical and psychological damage to people , '' the order read .	28
+narrative	0	0	`` I 'm not attempting to tell a narrative , '' Bunch said .	8
+pilots	0	0	The initiative , Tuskegee Next , is a special effort to increase the number of African-Americans who can work as pilots , said Stephen L. Davis , who owns a lighting company based in Wheaton and founded the organization .	20
+contest	0	0	About 1,000 people were killed in disputes over the 2011 presidential contest .	11
+woodlands	0	0	For Scott , the most exciting finds have been a rock embedded with what appears to be part of a sea lion 's mouth -LRB- perhaps 2 million years old -RRB- and a non-fossilized 10-foot limb from a digger pine tree that would look right at home today in Central California woodlands .	51
+married	0	0	`` I 've been struggling to stay optimistic , to stay encouraged , '' said Briscoe , married and the father of a 5-year-old son with whom he is working to rebuild a relationship .	17
+fireworks	0	0	Scattered violence was reported as fireworks and lasers lighted the Sunday night sky .	5
+Free	0	0	CHICAGO -- There 's only one thing that comes between the grade school kids hopping off the afternoon bus near Eve Pulver-Johnson 's Aurora , Ill. , house and their after-school snacks -- the Little Free Library on her family 's front lawn .	35
+narrowed	0	0	Hours earlier , Egypt 's new interim leadership had narrowed in on a compromise candidate to serve as the next prime minister .	9
+mesquite-speckled	0	0	These are the sort of hard decisions that hundreds of residents who live in the harsh , mesquite-speckled borderlands have had to make on a regular basis .	17
+tool	0	0	BEIJING -- Sitting at a desk in his small office here , Ma Jun , one of China 's best-known environmental advocates , shows off his latest tool in the fight against the nation 's crippling air pollution : a computer app .	27
+mythology	0	0	In Greco-Roman mythology Jupiter is the king of the gods , a deity who destroyed an older race of titans to become the jealous and vengeful lord of heaven and Earth .	2
+conveys	0	0	The Grammy Award-winning jazz singer and bassist said the variety of musicians who have performed at the White House conveys a message of inclusion at what the Obamas have long touted as the `` People 's House . ''	19
+surplus	0	0	WASHINGTON -- President Barack Obama is ordering up new rules for giving local police agencies access to surplus U.S. military equipment such as the armored vehicles , assault rifles and body armor that police in Ferguson , Missouri , used during protests this summer .	17
+prestigious	0	0	Misty Copeland made history on Tuesday when she was promoted to principal dancer of the prestigious American Ballet Theatre -LRB- ABT -RRB- , becoming the first African-American ballerina to reach the elite dance company 's top rank .	15
+constitutional	0	0	The recall was the first in the 100 years since Colorado adopted the constitutional provision and grew out of sweeping measures passed last winter after mass shootings at a school in Newtown , Connecticut , and at a movie theater in Aurora , outside Denver .	13
+rare	0	0	Last week , 9-year-old Hally Yust died after contracting a rare brain-eating amoeba infection while swimming near her family 's home in Kansas .	10
+Bread	0	0	Chains offering online ordering include Panera Bread and , for to-go orders , Olive Garden .	6
+reasonable	0	0	And since the stubby-legged louse does not fly or jump and needs close bodily contact to spread , it seemed reasonable that students under care for the infestation could remain in class without risk to others .	20
+task	0	0	But doing that is a monumental task .	6
+findings	0	0	Researchers at Stanford University recently set out to explore the neural basis of creativity and came up with surprising findings .	19
+lighter-than-air	0	0	Its launch Friday was part an offbeat experiment by Google in using lighter-than-air balloons , a concept pioneered in the 18th century , to solve the 21st-century problem of delivering Internet service to underserved parts of the world .	12
+Doctors	0	0	CHICAGO -- Doctors 2 parents : Limit kids ' tweeting , texting &amp; keep smartphones , laptops out of bedrooms .	2
+erasure	0	0	`` This is erasure , '' Dean-Burren said in an interview with The Washington Post .	3
+safest	0	0	LOS ANGELES -- The type of aircraft flown by Asiana Airlines that crash-landed at San Francisco International Airport on Saturday has long been regarded as one of the safest passenger jets ever developed .	28
+discoveries	0	0	The discoveries of elements 113 , 115 , 117 and 118 were confirmed last week by the International Union of Pure and Applied Chemistry .	1
+disputed	0	0	BEIJING -- In a sharp rebuff , China accused Washington on Wednesday of taking Japan 's side in a tense clash over disputed islands in the East China Sea , underscoring rising regional friction as visiting Vice President Joe Biden met with Beijing 's leaders .	22
+swelling	0	0	Once in the brain it causes a swelling called primary meningoencephalitis .	7
+tactics	0	0	`` The health care industry is not technically prepared to combat against cyber criminals ' basic cyber-intrusion tactics , '' an April report from the cyber division of the FBI says .	17
+creativity	0	0	Researchers at Stanford University recently set out to explore the neural basis of creativity and came up with surprising findings .	13
+degrade	0	0	As an added challenge , DARPA will deliberately degrade communication links between robots and operators for each team as it competes in order to create a scenario closer to the one responders experienced in Fukushima .	8
+sheet	0	0	How about a Lottie astronomer doll complete with a telescope , tripod and fact sheet about notable women stargazers , or a fossil hunter armed with a magnifying glass , geology hammer and ammonite fossils ?	14
+installed	0	0	Eight 2.3-ton electric motors installed on 1 WTC 's roof power the high-speed elevators .	4
+Dragon	0	0	China is known as the Smoking Dragon , but its addiction to tobacco is n't shared between the sexes .	6
+rank	0	0	Computer-animated films are big business : In most years , a handful rank among the top 10 U.S. box-office hits .	12
+guilty	0	0	The jury found Tsarnaev guilty last month on 30 counts , 17 of which carried the death penalty .	4
+community	0	0	THREE RIVERS , Calif. -- Black bears are a cherished part of the community here , a woodsy gateway town that funnels tourists to Sequoia and Kings Canyon national parks , where the first question many visitors ask of rangers is `` Where can I see a bear ? ''	13
+youth	0	0	But by focusing on the lack of opportunities in many of the city 's minority neighborhoods , and doing it through the lens of the city 's youth , Emanuel took on one of the top criticisms lobbed at him during the campaign : He 's a mayor who has perpetuated two Chicagos -- one for the wealthy and one for the rest .	27
+Sterling	0	0	Sterling has also been fined $ 2.5 million , and Silver made no effort to hide his outrage over the comments .	0
+research	0	0	The chance encounter of a Norwegian research vessel with the largest waves ever recorded amid floating packs of Arctic ice shows how such rollers could reroute shipping , damage oil platforms and threaten coastal communities with erosion .	6
+commissioners	0	0	WASHINGTON -- Parents in Charlotte , North Carolina , celebrated this month when their county commissioners approved a budget that includes $ 1.8 million to make sure every public school has a full-time nurse .	15
+caffeine	0	0	None of them were on medications , and none had consumed alcohol or caffeine in the 24 hours before each test .	13
+blind	0	0	An editorial in the state media China Daily charged , however , that Washington `` is turning a blind eye to Tokyo 's provocations , '' calling that the `` root cause of the tensions . ''	18
+good	0	0	`` They are only as good as the tools they allow their artists to use . ''	5
+guy	0	0	WASHINGTON -- Whether belting out lyrics to Al Green 's `` Let 's Stay Together , '' leading a mournful congregation through `` Amazing Grace , '' or tweeting his Spotify music playlist that includes Stevie Wonder and Nina Simone , President Barack Obama has shown that he 's a pretty soulful guy .	52
+laid	0	0	A layer of calcium carbonate laid down each year offers a snapshot of both the fish 's yearly growth and its surrounding ocean conditions .	5
+proactively	0	0	We should change this closed nature and consider accepting refugees from conflict zones proactively , '' the paper said .	13
+site	0	0	The monitoring site , more than 5,000 feet above sea level on a pine-studded overlook above the lowest layer of the atmosphere , gives Faloona access to undisturbed air from across the Pacific before it is fouled by U.S. pollution sources .	2
+prefer	0	0	Consumers prefer predatory fish like grouper , tuna , swordfish and sharks to species lower on the food chain such as anchovies and sardines , providing strong incentives for fishermen to catch the bigger fish .	1
